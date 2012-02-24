@@ -1,5 +1,17 @@
 Depot::Application.routes.draw do
+  get "store/index"
+
   resources :products
+  
+  #...
+  
+  # You can have the root of your site routed with "root"
+  # just remeber to delete public/index.html.
+  # root :to => "welcome#index"
+  root :to => 'store#index', :as => 'store' 
+  
+  #...
+end  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -57,4 +69,4 @@ Depot::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-end
+
