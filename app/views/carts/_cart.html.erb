@@ -10,7 +10,7 @@
 </table>      
       
     
-  
+<%= button_to "checkoout", new_order_path, :method => :get %>  
 <%= button_to 'Empty cart', @cart, :method => :delete,
     :confirm => 'Are you sure?' %>
 <% end %>      
