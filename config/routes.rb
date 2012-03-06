@@ -7,29 +7,27 @@ Depot::Application.routes.draw do
       delete 'logout' => :destroy
   end
 
-  resources :users
+ 
+   resources :users
+   resources :orders
+   resources :line_items
+   resources :carts
+     get "store/index"
+     resources :productd do
+     get :who_bought, :on => :member
+   end
+   
 
-  resources :orders
-
-  resources :line_items
-
-  resources :carts
-
-  get "store/index"
-  
-  resources :products do
-    get :who_bought, :on => :member
-  end
-  
   #...
   
   # You can have the root of your site routed with "root"
   # just remeber to delete public/index.html.
   # root :to => "welcome#index"
-  root :to => 'store#index', :as => 'store' 
+    root :to => 'store#index', :as => 'store'
+  end
   
   #...
-end  
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
